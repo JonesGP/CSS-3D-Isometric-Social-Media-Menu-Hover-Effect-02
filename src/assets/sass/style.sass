@@ -1,0 +1,134 @@
+@use 'mix'
+@use 'v'
+*
+    padding: 0
+    margin: 0
+    text-decoration: none
+    box-sizing: border-box
+    font-family: 'Oswald', sans-serif
+body
+    @include mix.f-jusal-cen
+    min-height: 100vh
+    background: v.$bg
+    overflow: hidden
+    .interface
+        position: absolute
+        width: 100vw
+        height: 100vh
+        .configs
+            position: absolute
+            left: 0
+            bottom: 0px
+            height: 120px
+            width: 120px
+            @include mix.f-jusal-cen
+            &:hover
+                .eng-one
+                    animation: rotate-eng 1s infinite linear
+            .eng-one
+                position: absolute
+                font-size: 3rem
+                transform-origin: center
+                color: v.$bg-li
+            .configs-click
+                position: absolute
+                height: 100%
+                width: 100%
+                font-size: 2.5rem
+                .tema-click
+                    position: absolute
+                    right: -20%
+                    top: 0
+                    .tema-color
+                        position: absolute
+                        top: -100%
+                        right: -100%
+                .language
+                    position: absolute
+                    top: -20%
+                    right: 25%
+            @keyframes rotate-eng
+                100%
+                    rotate: 360deg
+    .social-media
+        position: relative
+        transform: skewY(-25deg)
+        li
+            position: absolute
+            top: 0
+            transform: translate(calc( var(--ps) * 40px ), calc( var(--ps) *  40px))
+            @include mix.f-jusal-cen
+            list-style: none
+            width: 125px
+            height: 55px
+            padding: 15px
+            background: v.$bg-li
+            transition: 0.5s
+            &:hover
+                top: -54px
+                background: var(--clr)
+                a
+                    color: #fff
+                    span
+                        color: #fff
+            &::before
+                content: ''
+                position: absolute
+                top: 0
+                left: -40px
+                width: 40px
+                height: 100%
+                background: v.$bg-left3d
+                transform-origin: right
+                transform: skewY(45deg)
+                transition: 0.5s
+            &:hover::before
+                background: var(--clr)
+                filter: brightness(0.8)
+            &::after
+                content: attr(data-text)
+                position: absolute
+                top: -39px
+                left: 0
+                width: 100%
+                height: 40px
+                transform-origin: bottom
+                background: v.$bg-li
+                box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25)
+                transform: skewX(45deg)
+                display: flex
+                align-items: center
+                left: 0.05em
+                text-transform: uppercase
+                padding-left: 15px
+                box-sizing: border-box
+                color: var(--clr)
+                transition: 0.5s
+            &:hover::after
+                background: var(--clr)
+                filter: brightness(0.9)
+                color: #fff
+                box-shadow: -170px 170px 20px rgba(0, 0, 0, 0.25)
+            a
+                text-decoration: none
+                color: transparent
+                display: block
+                text-transform: uppercase
+                letter-spacing: 0.05em
+                transition: 0.5s
+                span
+                    position: absolute
+                    left: -40px
+                    width: 40px
+                    height: 100%
+                    top: 0
+                    transform: skewY(45deg)
+                    transform-origin: right
+                    color: var(--clr)
+                    transition: 0.5s
+                    @include mix.f-jusal-cen
+
+            
+
+
+
